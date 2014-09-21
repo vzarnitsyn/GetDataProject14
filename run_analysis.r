@@ -1,3 +1,4 @@
+#set working directory
 setwd("C:/Coursera/Get data/Project/UCI HAR Dataset")
 #read activity labels
 activity_labels<-read.table("activity_labels.txt")[,2]
@@ -46,6 +47,7 @@ Full_set<-data.frame(SubjectID=Subj_full[,1],Activity=activity_labels[Y_full[,1]
 write.csv(Full_set,"full_set.csv",row.names=FALSE)
 
 # This code was prepared on later date and some repetions are due to it
+setwd("C:/Coursera/Get data/Project/UCI HAR Dataset")
 library(dplyr)
 setwd("C:/Coursera/Get data/Project/UCI HAR Dataset")
 Full_set<-read.csv("full_set.csv")
@@ -61,5 +63,25 @@ Full_mean_set<-Full_set[,iscolummean]
 grouped_set<-group_by(Full_mean_set,SubjectID,Activity)
 #apply mean and summarise each column except SubjectID and Activity used for grouping
 Final_set<-summarise_each(grouped_set,funs(mean))
-#results saved to csv file subject_activity_mean_values.csv
+#results saved to text file "subject_activity_mean_values.txt"
 write.table(Final_set,"subject_activity_mean_values.txt",row.names=FALSE)
+#Part III - name changes for columns based on tidy data principles
+setwd("C:/Coursera/Get data/Project/UCI HAR Dataset")
+Final_set<-read.table("subject_activity_mean_values.txt",header=TRUE)
+Nameset<-names(Final_set)
+#get rid of starting 't'
+Nameset<-sub("^t","",Nameset)
+#replace starting f with FourierTransform
+Nameset<-sub("^f","FourierTransform",Nameset)
+#replace Acc with Acceleration
+Nameset<-sub("Acc","Acceleration",Nameset)
+#replace Gyro with AngularVelocity
+Nameset<-sub("Gyro","AngularVelocity",Nameset)
+#replace Mag with Magnitude
+Nameset<-sub("Mag","Magnitude",Nameset)
+#delete all mean as it is redundant in this dataset all values are averages
+Nameset<-sub("mean","",Nameset)
+#delete all periods
+Nameset<-gsub("\\.","",Nameset)
+names(Final_set)<-Nameset
+write.table(Final_set,"subject_activity_tidy.txt",row.names=FALSE)
