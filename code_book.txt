@@ -1,35 +1,85 @@
-"SubjectID"
-"Activity"
-"tBodyAcc.mean...X"
-"tBodyAcc.mean...Y"
-"tBodyAcc.mean...Z"
-"tGravityAcc.mean...X"
-"tGravityAcc.mean...Y"
-"tGravityAcc.mean...Z"
-"tBodyAccJerk.mean...X"
-"tBodyAccJerk.mean...Y"
-"tBodyAccJerk.mean...Z"
-"tBodyGyro.mean...X"
-"tBodyGyro.mean...Y"
-"tBodyGyro.mean...Z"
-"tBodyGyroJerk.mean...X"
-"tBodyGyroJerk.mean...Y"
-"tBodyGyroJerk.mean...Z"
-"tBodyAccMag.mean.."
-"tGravityAccMag.mean.."
-"tBodyAccJerkMag.mean.."
-"tBodyGyroMag.mean.."
-"tBodyGyroJerkMag.mean.."
-"fBodyAcc.mean...X"
-"fBodyAcc.mean...Y"
-"fBodyAcc.mean...Z"
-"fBodyAccJerk.mean...X"
-"fBodyAccJerk.mean...Y"
-"fBodyAccJerk.mean...Z"
-"fBodyGyro.mean...X"
-"fBodyGyro.mean...Y"
-"fBodyGyro.mean...Z"
-"fBodyAccMag.mean.."
-"fBodyBodyAccJerkMag.mean.."
-"fBodyBodyGyroMag.mean.."
-"fBodyBodyGyroJerkMag.mean.."
+
+###Study design
+The data used for the dataset came from the project" Human Activity Recognition database built 
+from the recordings of 30 subjects performing activities of daily living (ADL) while carrying a waist-mounted smartphone with embedded inertial sensors.
+
+Original Data Set Characteristics:  http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+Number of Instances: 10299
+Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto. 
+Smartlab - Non Linear Complex Systems Laboratory 
+DITEN - UniversitA  degli Studi di Genova, Genoa I-16145, Italy. 
+activityrecognition '@' smartlab.ws 
+www.smartlab.ws 
+
+
+Data Set Information:
+* Original Dataset
+The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. 
+Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) 
+wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, 3-axial linear acceleration and 3-axial angular velocity
+were captured at a constant rate of 50Hz. 
+
+The obtained dataset has been originally randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data
+ and 30% the test data. 
+
+The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows 
+of 2.56 sec and 50% overlap (128 readings/window). 
+The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter 
+into body acceleration and gravity. 
+The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. 
+From each window, a vector of features was obtained by calculating variables from the time and frequency domain. 
+
+The following information was used from the original dataset:
+Attribute Information:
+
+- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration. 
+- Triaxial Angular velocity from the gyroscope. 
+- Its activity label. 
+- An identifier of the subject who carried out the experiment.
+
+
+*Additional operations:
+Test and train sets separated originally were combined in one dataset. Only variables containing mean values of physical parameters (accelerations and angular velocity and their Fourier transforms) were used. 
+These data were additionally averaged for each subject (30) and each activity (6) i.e over 180 groups.
+
+
+
+###Code book
+
+1. "SubjectID" - number represrnting a subject, numeric ranges 1 to 30
+
+2. "Activity" - string of characters one of 6 (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)
+3. "tBodyAcc.mean...X" - floating point number, normalized, bound in [-1,1]. Average body acceleration X component,
+4. "tBodyAcc.mean...Y" - floating point number, normalized, bound in [-1,1]. Average body acceleration Y component,
+5. "tBodyAcc.mean...Z" - floating point number, normalized, bound in [-1,1]. Average body acceleration Z component,
+6. "tGravityAcc.mean...X"- floating point number, normalized, bound in [-1,1]. Average gravity acceleration X component,
+7. "tGravityAcc.mean...Y" -- floating point number, normalized, bound in [-1,1]. Average gravity acceleration Y component,
+8. "tGravityAcc.mean...Z" - floating point number, normalized, bound in [-1,1]. Average gravity acceleration Z component,
+9. "tBodyAccJerk.mean...X" - - floating point number, normalized, bound in [-1,1]. Average body jerk acceleration X component,
+10. "tBodyAccJerk.mean...Y" - - floating point number, normalized, bound in [-1,1]. Average body jerk acceleration Y component,
+11. "tBodyAccJerk.mean...Z" - - floating point number, normalized, bound in [-1,1]. Average body jerk acceleration Z component,
+12. "tBodyGyro.mean...X" - - floating point number, normalized, bound in [-1,1]. Average angular velocity X component,
+13. "tBodyGyro.mean...Y" - - floating point number, normalized, bound in [-1,1]. Average angular velocity Y component,
+14. "tBodyGyro.mean...Z" - floating point number, normalized, bound in [-1,1]. Average angular velocity Z component,
+15. "tBodyGyroJerk.mean...X" - floating point number, normalized, bound in [-1,1]. Average jerk angular velocity X component,
+16. "tBodyGyroJerk.mean...Y" - floating point number, normalized, bound in [-1,1]. Average jerk angular velocity Y component,
+17. "tBodyGyroJerk.mean...Z"- - floating point number, normalized, bound in [-1,1]. Average jerk angular velocity Z component,
+18. "tBodyAccMag.mean.." - - floating point number, normalized, bound in [-1,1]. Average magnitude of body acceleration,
+19. "tGravityAccMag.mean.." -floating point number, normalized, bound in [-1,1]. Average magnitude of gravity acceleration
+20. "tBodyAccJerkMag.mean.." - floating point number, normalized, bound in [-1,1]. Average magnitude of jerk acceleration
+21. "tBodyGyroMag.mean.." - floating point number, normalized, bound in [-1,1]. Average magnitude of angular velocity
+22. "tBodyGyroJerkMag.mean.." - floating point number, normalized, bound in [-1,1]. Average magnitude of jerk angular velocity
+23. "fBodyAcc.mean...X" = floating point number, normalized, bound in [-1,1]. Average Fourier transform of body acceleration X component
+24. "fBodyAcc.mean...Y" - = floating point number, normalized, bound in [-1,1]. Average Fourier transform of body acceleration Y component
+25. "fBodyAcc.mean...Z" - = floating point number, normalized, bound in [-1,1]. Average Fourier transform of body acceleration Z component
+26. "fBodyAccJerk.mean...X"- = floating point number, normalized, bound in [-1,1]. Average Fourier transform of body jerk acceleration X component
+27. "fBodyAccJerk.mean...Y" -  floating point number, normalized, bound in [-1,1]. Average Fourier transform of body jerk acceleration Y component
+28. "fBodyAccJerk.mean...Z"  floating point number, normalized, bound in [-1,1]. Average Fourier transform of body jerk acceleration Z component
+29. "fBodyGyro.mean...X" - floating point number, normalized, bound in [-1,1]. Average Fourier transform of angular velocity X component
+30. "fBodyGyro.mean...Y" - floating point number, normalized, bound in [-1,1]. Average Fourier transform of angular velocity Y component
+31. "fBodyGyro.mean...Z" -  floating point number, normalized, bound in [-1,1]. Average Fourier transform of angular velocity Z component
+32. "fBodyAccMag.mean.." - floating point number, normalized, bound in [-1,1]. Average Fourier transform of magnitude of body acceleration
+33. "fBodyBodyAccJerkMag.mean.."- - floating point number, normalized, bound in [-1,1]. Average Fourier transform of magnitude of body jerk acceleration
+34. "fBodyBodyGyroMag.mean.." - - floating point number, normalized, bound in [-1,1]. Average Fourier transform of magnitude of angular velocity
+35. "fBodyBodyGyroJerkMag.mean.."- floating point number, normalized, bound in [-1,1]. Average Fourier transform of magnitude of jerk angular velocity
+

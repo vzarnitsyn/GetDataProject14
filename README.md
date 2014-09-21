@@ -23,20 +23,34 @@ and subject_test.txt which contains subjectID for each row in X_test.txt
 
 ### Comments about the script
 1. The script does the following
+
 1.1 sets working directory to"C:/Coursera/Get data/Project/UCI HAR Dataset")
+
 1.2 Read activity labels, features
+
 1.3 Read and combine by rows (rbind) X_train and X_test into X_full, Y_train and Y_test into Y_full, subj_train and subj_test into subj_full datasets
+
 1.4 Names the column in X_full data set using names from features.txt
+
 1.5 Filters the list of columns ("features") for columns which names has "std" or "mean" but do not have "meanfreq" as part of their name and
 copies all relevant data to X_full_sub dataset
+
 1.5 Merges subject_full, activity and X_full_sub into one tidy data frame
+
 1.6 Saves Full_set to "full_set.csv"
+
 Note: steps 1.1 to 1.6 are rather lengthy and for that reason step script can be restarted from step 2.1 using "full_set.csv" as an initial point given
  that this file was created already
 
 2.1 download dplyr library
+
 2.2 Read the "full_set.csv" into Full_set table
+
 2.3 Filter out all columns which does does not have SubjectID or Activity or mean as part of their name into new table Full_mean_set (35 columns including subjectID and Activity)
+
 2.4 Group Full_mean_set by SubjectID and Activity
+
 2.5 Perform averaging of all variables for each subject(30) and each activity(6) - in total 180 combinations by summarise_each function from dplyr
+
 2.6 Save results to text file "subject_activity_mean_values.txt"
+
