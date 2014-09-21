@@ -54,3 +54,7 @@ Note: steps 1.1 to 1.6 are rather lengthy and for that reason step script can be
 
 2.6 Save results to text file "subject_activity_mean_values.txt"
 
+3. Names in the dataset were replaced with more descriptive names and some symbols like "." were removed (using sub() and gsub()).
+The same dataset with new variable names was saved in subject_activity_tudy.txt
+
+

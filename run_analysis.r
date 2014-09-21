@@ -1,4 +1,3 @@
-#set working directory
 setwd("C:/Coursera/Get data/Project/UCI HAR Dataset")
 #read activity labels
 activity_labels<-read.table("activity_labels.txt")[,2]
@@ -62,5 +61,5 @@ Full_mean_set<-Full_set[,iscolummean]
 grouped_set<-group_by(Full_mean_set,SubjectID,Activity)
 #apply mean and summarise each column except SubjectID and Activity used for grouping
 Final_set<-summarise_each(grouped_set,funs(mean))
-#results saved to text file "subject_activity_mean_values.txt"
+#results saved to csv file subject_activity_mean_values.csv
 write.table(Final_set,"subject_activity_mean_values.txt",row.names=FALSE)

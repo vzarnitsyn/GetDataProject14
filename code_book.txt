@@ -45,41 +45,75 @@ These data were additionally averaged for each subject (30) and each activity (6
 
 
 ###Code book
+Note: all values for physical measurements are normalized which makes them unitless.
 
 1. "SubjectID" - number represrnting a subject, numeric ranges 1 to 30
 
 2. "Activity" - string of characters one of 6 (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)
-3. "tBodyAcc.mean...X" - floating point number, normalized, bound in [-1,1]. Average body acceleration X component,
-4. "tBodyAcc.mean...Y" - floating point number, normalized, bound in [-1,1]. Average body acceleration Y component,
-5. "tBodyAcc.mean...Z" - floating point number, normalized, bound in [-1,1]. Average body acceleration Z component,
-6. "tGravityAcc.mean...X"- floating point number, normalized, bound in [-1,1]. Average gravity acceleration X component,
-7. "tGravityAcc.mean...Y" -- floating point number, normalized, bound in [-1,1]. Average gravity acceleration Y component,
-8. "tGravityAcc.mean...Z" - floating point number, normalized, bound in [-1,1]. Average gravity acceleration Z component,
-9. "tBodyAccJerk.mean...X" - - floating point number, normalized, bound in [-1,1]. Average body jerk acceleration X component,
-10. "tBodyAccJerk.mean...Y" - - floating point number, normalized, bound in [-1,1]. Average body jerk acceleration Y component,
-11. "tBodyAccJerk.mean...Z" - - floating point number, normalized, bound in [-1,1]. Average body jerk acceleration Z component,
-12. "tBodyGyro.mean...X" - - floating point number, normalized, bound in [-1,1]. Average angular velocity X component,
-13. "tBodyGyro.mean...Y" - - floating point number, normalized, bound in [-1,1]. Average angular velocity Y component,
-14. "tBodyGyro.mean...Z" - floating point number, normalized, bound in [-1,1]. Average angular velocity Z component,
-15. "tBodyGyroJerk.mean...X" - floating point number, normalized, bound in [-1,1]. Average jerk angular velocity X component,
-16. "tBodyGyroJerk.mean...Y" - floating point number, normalized, bound in [-1,1]. Average jerk angular velocity Y component,
-17. "tBodyGyroJerk.mean...Z"- - floating point number, normalized, bound in [-1,1]. Average jerk angular velocity Z component,
-18. "tBodyAccMag.mean.." - - floating point number, normalized, bound in [-1,1]. Average magnitude of body acceleration,
-19. "tGravityAccMag.mean.." -floating point number, normalized, bound in [-1,1]. Average magnitude of gravity acceleration
-20. "tBodyAccJerkMag.mean.." - floating point number, normalized, bound in [-1,1]. Average magnitude of jerk acceleration
-21. "tBodyGyroMag.mean.." - floating point number, normalized, bound in [-1,1]. Average magnitude of angular velocity
-22. "tBodyGyroJerkMag.mean.." - floating point number, normalized, bound in [-1,1]. Average magnitude of jerk angular velocity
-23. "fBodyAcc.mean...X" = floating point number, normalized, bound in [-1,1]. Average Fourier transform of body acceleration X component
-24. "fBodyAcc.mean...Y" - = floating point number, normalized, bound in [-1,1]. Average Fourier transform of body acceleration Y component
-25. "fBodyAcc.mean...Z" - = floating point number, normalized, bound in [-1,1]. Average Fourier transform of body acceleration Z component
-26. "fBodyAccJerk.mean...X"- = floating point number, normalized, bound in [-1,1]. Average Fourier transform of body jerk acceleration X component
-27. "fBodyAccJerk.mean...Y" -  floating point number, normalized, bound in [-1,1]. Average Fourier transform of body jerk acceleration Y component
-28. "fBodyAccJerk.mean...Z"  floating point number, normalized, bound in [-1,1]. Average Fourier transform of body jerk acceleration Z component
-29. "fBodyGyro.mean...X" - floating point number, normalized, bound in [-1,1]. Average Fourier transform of angular velocity X component
-30. "fBodyGyro.mean...Y" - floating point number, normalized, bound in [-1,1]. Average Fourier transform of angular velocity Y component
-31. "fBodyGyro.mean...Z" -  floating point number, normalized, bound in [-1,1]. Average Fourier transform of angular velocity Z component
-32. "fBodyAccMag.mean.." - floating point number, normalized, bound in [-1,1]. Average Fourier transform of magnitude of body acceleration
-33. "fBodyBodyAccJerkMag.mean.."- - floating point number, normalized, bound in [-1,1]. Average Fourier transform of magnitude of body jerk acceleration
-34. "fBodyBodyGyroMag.mean.." - - floating point number, normalized, bound in [-1,1]. Average Fourier transform of magnitude of angular velocity
-35. "fBodyBodyGyroJerkMag.mean.."- floating point number, normalized, bound in [-1,1]. Average Fourier transform of magnitude of jerk angular velocity
+
+3. BodyAccelerationX - floating point number, normalized, bound in [-1,1]. Average body acceleration X component,
+
+4. BodyAccelerationY - floating point number, normalized, bound in [-1,1]. Average body acceleration Y component,
+
+5. BodyAccelerationZ - floating point number, normalized, bound in [-1,1]. Average body acceleration Z component,
+
+6. GravityAccelerationX - floating point number, normalized, bound in [-1,1]. Average gravity acceleration X component,
+
+7. GravityAccelerationY - floating point number, normalized, bound in [-1,1]. Average gravity acceleration Y component,
+
+8. GravityAccelerationZ - floating point number, normalized, bound in [-1,1]. Average gravity acceleration Z component,
+
+9. BodyAccelerationJerkX  - floating point number, normalized, bound in [-1,1]. Average body jerk acceleration X component,
+
+10. BodyAccelerationJerkY  - floating point number, normalized, bound in [-1,1]. Average body jerk acceleration Y component,
+
+11. BodyAccelerationJerkZ  - floating point number, normalized, bound in [-1,1]. Average body jerk acceleration Z component,
+
+12. BodyAngularVelocityX - - floating point number, normalized, bound in [-1,1]. Average angular velocity X component,
+
+13. BodyAngularVelocityY - - floating point number, normalized, bound in [-1,1]. Average angular velocity Y component,
+
+14. BodyAngularVelocityZ - floating point number, normalized, bound in [-1,1]. Average angular velocity Z component,
+
+15. BodyAngularVelocityJerkX - floating point number, normalized, bound in [-1,1]. Average jerk angular velocity X component,
+
+16. BodyAngularVelocityJerkY - floating point number, normalized, bound in [-1,1]. Average jerk angular velocity Y component,
+
+17. BodyAngularVelocityJerkZ- - floating point number, normalized, bound in [-1,1]. Average jerk angular velocity Z component,
+
+18. BodyAccelerationMagnitude - floating point number, normalized, bound in [-1,1]. Average magnitude of body acceleration,
+
+19. GravityAccelerationMagnitude -floating point number, normalized, bound in [-1,1]. Average magnitude of gravity acceleration
+
+20. BodyAccelerationJerkMagnitude - floating point number, normalized, bound in [-1,1]. Average magnitude of jerk acceleration
+
+21. BodyAngularVelocityMagnitude - floating point number, normalized, bound in [-1,1]. Average magnitude of angular velocity
+
+22. BodyAngularVelocityJerkMagnitude - floating point number, normalized, bound in [-1,1]. Average magnitude of jerk angular velocity
+
+23. FourierTransformBodyAccelerationX - floating point number, normalized, bound in [-1,1]. Average Fourier transform of body acceleration X component
+
+24. FourierTransformBodyAccelerationY - floating point number, normalized, bound in [-1,1]. Average Fourier transform of body acceleration Y component
+
+25. FourierTransformBodyAccelerationZ - floating point number, normalized, bound in [-1,1]. Average Fourier transform of body acceleration Z component
+
+26. FourierTransformBodyAccelerationJerkX - floating point number, normalized, bound in [-1,1]. Average Fourier transform of body jerk acceleration X component
+
+27. FourierTransformBodyAccelerationJerkY - floating point number, normalized, bound in [-1,1]. Average Fourier transform of body jerk acceleration Y component
+
+28. FourierTransformBodyAccelerationJerkZ - floating point number, normalized, bound in [-1,1]. Average Fourier transform of body jerk acceleration Z component
+
+29. FourierTransformBodyAngularVelocityX - floating point number, normalized, bound in [-1,1]. Average Fourier transform of angular velocity X component
+
+30. FourierTransformBodyAngularVelocityY - floating point number, normalized, bound in [-1,1]. Average Fourier transform of angular velocity Y component
+
+31. FourierTransformBodyAngularVelocityZ -  floating point number, normalized, bound in [-1,1]. Average Fourier transform of angular velocity Z component
+
+32. FourierTransformBodyAccelerationMagnitude - floating point number, normalized, bound in [-1,1]. Average Fourier transform of magnitude of body acceleration
+
+33. FourierTransformBodyBodyAccelerationJerkMagnitude - floating point number, normalized, bound in [-1,1]. Average Fourier transform of magnitude of body jerk acceleration
+
+34. FourierTransformBodyBodyAngularVelocityMagnitude - floating point number, normalized, bound in [-1,1]. Average Fourier transform of magnitude of angular velocity
+
+35. FourierTransformBodyBodyAngularVelocityJerkMagnitude - floating point number, normalized, bound in [-1,1]. Average Fourier transform of magnitude of jerk angular velocity
 
